@@ -8,14 +8,14 @@ namespace databaseExercise.Entities
 {
     public class Borrow : SqlThing
     {
-        public required Book Book { get; set; }
-        public required Member Member { get; set; }
+        public Book? Book { get; set; }
+        public Member? Member { get; set; }
 
         public DateTime BorrowTime { get; set; }
         public DateTime? ReturnTime { get; set; }
         public override string ToString()
         {
-            return $"(Borrow) {Id} {Book} to {Member} {BorrowTime} {ReturnTime}";
+            return $"(Borrow) {Id} {Book} to {Member} {BorrowTime}";
         }
     }
 }

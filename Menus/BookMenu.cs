@@ -94,7 +94,7 @@ namespace databaseExercise.Menus
             }
         }
 
-        private static void BooksList()
+        public static void BooksList()
         {
             using (var db = new MyDB())
             {
