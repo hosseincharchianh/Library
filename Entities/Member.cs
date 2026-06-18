@@ -18,11 +18,11 @@ namespace databaseExercise.Entities
 
         public void Read()
         {
-            Console.Write("Fullname");
+            Console.Write("Fullname :");
             Fullname = Console.ReadLine() ?? "";
-            Console.Write("Address");
+            Console.Write("Address :");
             Address = Console.ReadLine() ?? "";
-            Console.Write("PhoneNumber");
+            Console.Write("PhoneNumber :");
             PhoneNumber = Console.ReadLine() ?? "";
         }
     }

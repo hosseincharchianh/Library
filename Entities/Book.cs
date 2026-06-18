@@ -20,13 +20,13 @@ namespace databaseExercise.Entities
 
         public void Read()
         {
-            Console.Write("Title");
+            Console.Write("Title :");
             Title=Console.ReadLine()??"";
-            Console.Write("Publisher");
+            Console.Write("Publisher :");
             Publisher=Console.ReadLine()??"";
-            Console.Write("Writer");
+            Console.Write("Writer :");
             Writer=Console.ReadLine()??"";
-            Console.Write("Price");
+            Console.Write("Price :");
             Price=double.Parse(Console.ReadLine()??"");
         }
     }   
