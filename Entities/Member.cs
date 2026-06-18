@@ -10,6 +10,7 @@ namespace databaseExercise.Entities
     {
         public required string  Fullname { get; set; }
         public string?  Address { get; set; }
+        public string? PhoneNumber { get; set; }
         public override string ToString()
         {
             return $"(Member) {Id} {Fullname} {Address} ";
