@@ -67,7 +67,9 @@ namespace databaseExercise.Menus
                 {
                     db.Books.Remove(book);
                     db.SaveChanges();
+                    Console.ForegroundColor=ConsoleColor.Green;
                     Console.WriteLine("Done");
+                    Console.ResetColor();
                 }
             }
         }
@@ -82,14 +84,18 @@ namespace databaseExercise.Menus
                 var book = db.Books.FirstOrDefault(m => m.Id == id);
                 if (book == null)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Not Found!");
+                    Console.ResetColor();
                 }
                 else
                 {
                     Console.WriteLine(book);
                     book.Read();
                     db.SaveChanges();
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Done!");
+                    Console.ResetColor();
                 }
             }
         }
@@ -113,7 +119,9 @@ namespace databaseExercise.Menus
             {
                 db.Books.Add(book);
                 db.SaveChanges();
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Done!");
+                Console.ResetColor();
             }
         }
     }

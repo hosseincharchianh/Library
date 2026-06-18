@@ -31,7 +31,7 @@ namespace databaseExercise.Menus
                 {
                     break;
                 }
-                 else if (choice == 1)
+                else if (choice == 1)
                 {
                     MemberAdd();
                 }
@@ -61,13 +61,17 @@ namespace databaseExercise.Menus
                 var Member = db.Members.FirstOrDefault(m => m.Id == id);
                 if (Member == null)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Not Found!");
+                    Console.ResetColor();
                 }
                 else
                 {
                     db.Members.Remove(Member);
                     db.SaveChanges();
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Done");
+                    Console.ResetColor();
                 }
             }
         }
@@ -82,14 +86,18 @@ namespace databaseExercise.Menus
                 var member = db.Members.FirstOrDefault(m => m.Id == id);
                 if (member == null)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Not Found!");
+                    Console.ResetColor();
                 }
                 else
                 {
                     Console.WriteLine(member);
                     member.Read();
                     db.SaveChanges();
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Done!");
+                    Console.ResetColor();
                 }
             }
         }
@@ -113,7 +121,9 @@ namespace databaseExercise.Menus
             {
                 db.Members.Add(member);
                 db.SaveChanges();
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Done!");
+                Console.ResetColor();
             }
         }
     }

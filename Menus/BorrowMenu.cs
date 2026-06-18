@@ -57,14 +57,18 @@ namespace databaseExercise.Menus
                 var borrow = db.Borrows.FirstOrDefault(m => m.Id == id);
                 if (borrow == null)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Not Found!");
+                    Console.ResetColor();
                 }
                 else
                 {
                     Console.WriteLine(borrow);
-                    borrow.ReturnTime=DateTime.Now;
+                    borrow.ReturnTime = DateTime.Now;
                     db.SaveChanges();
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Done!");
+                    Console.ResetColor();
                 }
             }
         }
@@ -96,13 +100,17 @@ namespace databaseExercise.Menus
                 var book = db.Books.FirstOrDefault(b => b.Id == bookId);
                 if (book == null)
                 {
+                    Console.ForegroundColor=ConsoleColor.Red;
                     Console.WriteLine("Book Not Found");
+                    Console.ResetColor();
                     return;
                 }
                 var member = db.Members.FirstOrDefault(m => m.Id == memberId);
                 if (member == null)
                 {
+                    Console.ForegroundColor=ConsoleColor.Red;
                     Console.WriteLine("Member Not found!");
+                    Console.ResetColor();
                     return;
                 }
                 var borrow = new Borrow();
@@ -111,7 +119,9 @@ namespace databaseExercise.Menus
                 borrow.BorrowTime = DateTime.Now;
                 db.Borrows.Add(borrow);
                 db.SaveChanges();
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Done!");
+                Console.ResetColor();
             }
         }
     }
