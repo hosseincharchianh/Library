@@ -9,13 +9,25 @@ namespace databaseExercise.Entities
 {
     public class Book : SqlThing
     {
-        public required string Title { get; set; }
-        public required string Publisher { get; set; }
-        public required string Writer { get; set; }
+        public  string? Title { get; set; }
+        public  string? Publisher { get; set; }
+        public  string? Writer { get; set; }
         public double Price { get; set; }
         public override string ToString()
         {
             return $"(Book) {Id} {Title} {Publisher} {Writer} {Price} "; 
+        }
+
+        public void Read()
+        {
+            Console.Write("Title");
+            Title=Console.ReadLine()??"";
+            Console.Write("Publisher");
+            Publisher=Console.ReadLine()??"";
+            Console.Write("Writer");
+            Writer=Console.ReadLine()??"";
+            Console.Write("Price");
+            Price=double.Parse(Console.ReadLine()??"");
         }
     }   
 }
